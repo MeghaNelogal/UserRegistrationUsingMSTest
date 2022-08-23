@@ -19,6 +19,14 @@ namespace DetailValidation
             string actual = validation.ValidateLastName("Nelogal");
             Assert.AreEqual(actual, "Nelogal");
         }
+
+        [TestMethod]
+        public void GivenInputIsString_WhenTestEmail_ShouldReturnEmail()
+        {
+            Validation validation = new Validation();
+            string actual = validation.ValidateEmail("meghanelogal@gmail.co.in");
+            Assert.AreEqual(actual, "meghanelogal@gmail.co.in");
+        }
     }
-   
 }
+   
