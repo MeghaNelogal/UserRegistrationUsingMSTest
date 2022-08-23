@@ -41,6 +41,13 @@ namespace DetailValidation
             string actual = validation.ValidatePassword("Meghappn");
             Assert.AreEqual(actual, "Meghappn");
         }
+        [TestMethod]
+        public void GivenInputIsString_WhenTestPassword_ShouldReturnPassword_ContainsOneUpperCase()
+        {
+            Validation validation = new Validation();
+            string actual = validation.ValidatePassword("Meghanelogal");
+            Assert.AreEqual(actual, "Meghanelogal");
+        }
     }
 }
 
