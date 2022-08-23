@@ -86,8 +86,6 @@ namespace DetailValidation
             Assert.AreEqual(Email9, "abc@gmail.com.com");
             string Email10 = validation.ValidateEmail("abc+100@gmail.com");
             Assert.AreEqual(Email10, "abc+100@gmail.com");
-
-
         }
     }
 }

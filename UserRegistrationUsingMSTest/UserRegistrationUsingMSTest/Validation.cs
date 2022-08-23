@@ -14,6 +14,7 @@ namespace UserRegistrationUsingMSTest
         public static string EMAIL_REGEX = "^(abc).?[a-z]{3,}[@](bl).?(co).?[a-z]{2,}$";
         public static string MOBILENUMBER_REGEX = "^[0-9]{1,3}[ ][6789][0-9]{9}$";
         public static string PASSWORD_REGEX = "^[A-Z]{1}[A-Z a-z]{7,}[!*@#$%^&+=]?[0-9]{1,}$";
+
         public string ValidateFirstName(string firstname)
         {
             if (Regex.IsMatch(firstname, FIRSTNAME_REGEX))
