@@ -19,17 +19,21 @@ namespace UserRegistrationUsingMSTest
         const string passwordWithOneSpecialCharacter = "^[A-Z]{1,}[a-z]{8,}[0-9]{1,}[@$#!*&^%]{1}$";
         const string ALL_EMAIL_SAMPLES = "^[a-z]+[.+-]{0,1}[0-9]{1, }+[@][a-z0-1][.][a-z]+([.][a-z]{2, }){0,1}$";
 
-        public string ValidateFirstName(string firstname)
+      
+        public bool ValidateFirstName(string firstname)
         {
-            if (Regex.IsMatch(firstname, FIRSTNAME_REGEX))
+            try
             {
-                Console.WriteLine("First Name Matches");
+                if (FIRSTNAME_REGEX != firstname)
+                {
+                    throw new ExceptionUserRegistration(ExceptionUserRegistration.ExceptionType.INVALID_FIRSTNAME, "First Name Is Invalid");
+                }
+                return Regex.IsMatch(firstname, FIRSTNAME_REGEX);
             }
-            else
+            catch (ExceptionUserRegistration ex)
             {
-                Console.WriteLine("Verify First Name Again");
+                return ex.Message == "First Name Is Invalid";
             }
-            return firstname;
         }
         public string ValidateLastName(string lastname)
         {
