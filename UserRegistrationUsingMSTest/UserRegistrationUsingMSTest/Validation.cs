@@ -110,6 +110,18 @@ namespace UserRegistrationUsingMSTest
             }
             return password;
         }
+        public string ValidatePasswordClearAllSamples(string password)
+        {
+            if (Regex.IsMatch(password, PASSWORD_REGEX))
+            {
+                Console.WriteLine("Password Matches");
+            }
+            else
+            {
+                Console.WriteLine("Verify Password Again");
+            }
+            return password;
+        }
     }
 }
 
