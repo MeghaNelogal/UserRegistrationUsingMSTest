@@ -12,6 +12,7 @@ namespace UserRegistrationUsingMSTest
         public const string FIRSTNAME_REGEX = "^[A-Z]{1}[a-z]{2,}$";
         public const string LAST_NAME_REGEX = "^[A-Z]{1}[a-z]{2,}$";
         public static string EMAIL_REGEX = "^(abc).?[a-z]{3,}[@](bl).?(co).?[a-z]{2,}$";
+        public static string MOBILENUMBER_REGEX = "^[0-9]{1,3}[ ][6789][0-9]{9}$";
         public string ValidateFirstName(string firstname)
         {
             if (Regex.IsMatch(firstname, FIRSTNAME_REGEX))
@@ -48,8 +49,21 @@ namespace UserRegistrationUsingMSTest
             }
             return email;
         }
+        public string ValidateMobileNumber(string mobilenumber)
+        {
+            if (Regex.IsMatch(mobilenumber, MOBILENUMBER_REGEX))
+            {
+                Console.WriteLine("Mobile Number Matches.");
+            }
+            else
+            {
+                Console.WriteLine("Verify Mobile Number Again.");
+            }
+            return mobilenumber;
+        }
     }
 }
+
     
 
 
