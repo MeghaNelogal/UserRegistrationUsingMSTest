@@ -87,8 +87,23 @@ namespace DetailValidation
             string Email10 = validation.ValidateEmail("abc+100@gmail.com");
             Assert.AreEqual(Email10, "abc+100@gmail.com");
         }
+        [TestMethod]
+        
+        public void GivenInputIsString_WhenTestEmail_ShouldReturnEmailParamerizedTest()
+        {
+            Validation validation = new Validation();
+            string Email1 = validation.ValidateEmail("meghapn1998@gmail.co.in");
+            Assert.AreEqual(Email1, "meghapn1998@gmail.co.in");
+            string Email2 = validation.ValidateEmail("abc@yahoo.com");
+            Assert.AreEqual(Email2, "abc@yahoo.com");
+            string Email3 = validation.ValidateEmail("abc-100@yahoo.com");
+            Assert.AreEqual(Email3, "abc-100@yahoo.com");
+
+        }
     }
 }
+   
+
 
 
    

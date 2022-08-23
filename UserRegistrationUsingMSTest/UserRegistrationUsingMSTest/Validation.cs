@@ -14,6 +14,10 @@ namespace UserRegistrationUsingMSTest
         public static string EMAIL_REGEX = "^(abc).?[a-z]{3,}[@](bl).?(co).?[a-z]{2,}$";
         public static string MOBILENUMBER_REGEX = "^[0-9]{1,3}[ ][6789][0-9]{9}$";
         public static string PASSWORD_REGEX = "^[A-Z]{1}[A-Z a-z]{7,}[!*@#$%^&+=]?[0-9]{1,}$";
+        const string passwordWithOneUpperCase = "^[A-Z]{1,}[a-z]{8,}$";
+        const string passwordWithOneNumber = "^[A-Z]{1,}[a-z]{8,}[0-9]{1,}$";
+        const string passwordWithOneSpecialCharacter = "^[A-Z]{1,}[a-z]{8,}[0-9]{1,}[@$#!*&^%]{1}$";
+        const string ALL_EMAIL_SAMPLES = "^[a-z]+[.+-]{0,1}[0-9]{1, }+[@][a-z0-1][.][a-z]+([.][a-z]{2, }){0,1}$";
 
         public string ValidateFirstName(string firstname)
         {
@@ -123,8 +127,22 @@ namespace UserRegistrationUsingMSTest
             }
             return password;
         }
+        public string ValidateEmailParametrized(string email)
+        {
+            if (Regex.IsMatch(email, EMAIL_REGEX))
+            {
+                Console.WriteLine("Email Matches");
+            }
+            else
+            {
+                Console.WriteLine("Verify Email Again");
+            }
+            return email;
+        }
     }
 }
+
+
 
 
     
