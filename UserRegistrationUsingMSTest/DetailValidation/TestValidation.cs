@@ -12,5 +12,13 @@ namespace DetailValidation
             string actual = validation.ValidateFirstName("Megha");
             Assert.AreEqual(actual, "Megha");
         }
+        [TestMethod]
+        public void GivenInputIsString_WhenTestLastName_ShouldReturnLastName()
+        {
+            Validation validation = new Validation();
+            string actual = validation.ValidateLastName("Nelogal");
+            Assert.AreEqual(actual, "Nelogal");
+        }
     }
+   
 }
