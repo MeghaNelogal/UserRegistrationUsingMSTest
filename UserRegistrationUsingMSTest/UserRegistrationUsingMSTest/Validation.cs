@@ -13,7 +13,7 @@ namespace UserRegistrationUsingMSTest
         public const string LAST_NAME_REGEX = "^[A-Z]{1}[a-z]{2,}$";
         public static string EMAIL_REGEX = "^(abc).?[a-z]{3,}[@](bl).?(co).?[a-z]{2,}$";
         public static string MOBILENUMBER_REGEX = "^[0-9]{1,3}[ ][6789][0-9]{9}$";
-        public static string PASSWORD_REGEX = "^[A-Z]{1}[A-Z a-z]{7,}$";
+        public static string PASSWORD_REGEX = "^[A-Z]{1}[A-Z a-z]{7,}[0-9]{1,}$";
         public string ValidateFirstName(string firstname)
         {
             if (Regex.IsMatch(firstname, FIRSTNAME_REGEX))
@@ -75,6 +75,18 @@ namespace UserRegistrationUsingMSTest
             return password;
         }
         public string ValidatePasswordOneUpperCase(string password)
+        {
+            if (Regex.IsMatch(password, PASSWORD_REGEX))
+            {
+                Console.WriteLine("Password Matches");
+            }
+            else
+            {
+                Console.WriteLine("Verify Password Again");
+            }
+            return password;
+        }
+        public string ValidatePasswordOneNumericNum(string password)
         {
             if (Regex.IsMatch(password, PASSWORD_REGEX))
             {

@@ -48,6 +48,13 @@ namespace DetailValidation
             string actual = validation.ValidatePassword("Meghanelogal");
             Assert.AreEqual(actual, "Meghanelogal");
         }
+        [TestMethod]
+        public void GivenInputIsString_WhenTestPassword_ShouldReturnPassword_ContainsOneNumber()
+        {
+            Validation validation = new Validation();
+            string actual = validation.ValidatePassword("Meghanelogal12");
+            Assert.AreEqual(actual, "Meghanelogal12");
+        }
     }
 }
 
